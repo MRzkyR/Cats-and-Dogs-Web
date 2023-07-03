@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Playball&display=swap");
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: "Montserrat", sans-serif;
+   font-size: 16px;
+   width: 100%;
+   background-color: #F6F6F6;
+}
+
+h1 {
+   font-size: 3.5rem;
+   font-weight: bold;
+   line-height: 60px;
+}
+
+h2 {
+   font-size: 2.2rem;
+   font-weight: bold;
+}
+
+h3 {
+   font-size: 1.8rem;
+   font-weight: bold;
+}
+
+h4 {
+   font-size: 1.5rem;
+   font-weight: 600;
+}
+
+p {
+   font-size: 1.1rem;
+   line-height: 30px;
+}
+
+.section {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 50px 50px 25px 50px;
+}
+
+/* NAVBAR START */
+
+nav {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: aliceblue;
+   padding: 18px 50px;
+   box-shadow: 0 5px 15px rgb(0, 0, 0, 0.08);
+   position: fixed;
+}
+
+nav #logo {
+   font-family: "Playball", sans-serif;
+   font-size: 1.3em;
+}
+
+nav li {
+   list-style: none;
+   display: inline-block;
+}
+
+nav li a {
+   text-decoration: none;
+   font-size: 0.8em;
+   font-weight: 600;
+   color: #1a1a1a;
+   margin-left: 40px;
+   transition: 0.3s ease;
+   position: relative;
+}
+
+nav li a:hover,
+nav li a.active {
+   color: #ec840e;
+}
+
+nav li a.active::after {
+   content: "";
+   width: 50%;
+   height: 2px;
+   position: absolute;
+   bottom: -4px;
+   left: 0;
+   background-color: #ec840e;
+}
+
+/* HERO START */
+
+#hero {
+   background-color: #d4dae7;
+   height: 100vh;
+   position: relative;
+   z-index: -1;
+}
+
+#hero .hero-text {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: center;
+   padding: 50px;
+}
+
+#hero .hero-text h1 {
+   color: #233747;
+   width: 60%;
+   margin-bottom: 1rem;
+}
+
+#hero .hero-text p {
+   color: #233747;
+   width: 50%;
+   margin-bottom: 1rem;
+}
+
+#hero .hero-text button {
+   padding: 15px 30px;
+   border-radius: 10px;
+   font-size: 1em;
+   font-weight: bold;
+   color: #fff;
+   background-color: #ec840e;
+   border: none;
+   box-shadow: 3px 0 4px rgba(32, 190, 108, 0.08);
+   margin-top: 25px;
+}
+
+#hero img {
+   width: 60%;
+   position: absolute;
+   bottom: 0;
+   right: -50px;
+}
+
+/* ABOUT SECTION START */
+
+#about p {
+   text-align: center;
+   margin-top: 15px;
+   font-size: 1.1rem;
+   font-weight: 500;
+   line-height: 40px;
+}
+
+/* ABOUT SECTION START */
+
+#featured .cards {
+   margin-top: 35px;
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   flex-wrap: wrap;
+}
+
+#featured .feature-card {
+   padding: 25px;
+   width: 300px;
+   height: 415px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   border-radius: 20px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+   background-color: #FFF;
+}
+
+#featured .feature-card img {
+   width: 90%;
+   margin-bottom: 20px;
+}
+
+#featured .feature-card p {
+   text-align: justify;
+}
