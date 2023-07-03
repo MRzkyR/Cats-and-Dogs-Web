@@ -10,7 +10,7 @@ body {
    font-family: "Montserrat", sans-serif;
    font-size: 16px;
    width: 100%;
-   background-color: #F6F6F6;
+   background-color: #f6f6f6;
 }
 
 h1 {
@@ -32,6 +32,11 @@ h3 {
 h4 {
    font-size: 1.5rem;
    font-weight: 600;
+}
+
+h5 {
+   font-size: 0.85rem;
+   font-weight: bold;
 }
 
 p {
@@ -175,7 +180,7 @@ nav li a.active::after {
    align-items: center;
    border-radius: 20px;
    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
-   background-color: #FFF;
+   background-color: #fff;
 }
 
 #featured .feature-card img {
@@ -186,3 +191,56 @@ nav li a.active::after {
 #featured .feature-card p {
    text-align: justify;
 }
+
+/* ARTICLES SECTION START */
+
+#articles {
+   margin-top: 50px;
+}
+
+#articles .article {
+   width: 100%;
+   height: 380px;
+   background-size: cover;
+   background-position: center;
+   background-color: #233747;
+}
+
+#articles #cat {
+   background-image: url("Images/cat.jpg");
+}
+
+#articles #dog {
+   background-image: url("Images/dog-cp.jpg");
+}
+
+#articles .article-content {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   width: 55%;
+   height: 100%;
+   padding: 50px;
+   color: white;
+}
+
+#articles .article-content p {
+   margin-top: 15px;
+   font-size: 1rem;
+   line-height: 40px;
+}
+
+#articles .article-content h5 {
+   color: rgb(205, 205, 205);
+}
+
+#articles #dog .article-content {
+   float: right;
+}
+
+#articles #dog .article-content h2,
+#articles #dog .article-content p,
+#articles #dog .article-content h5 {
+   text-align: right;
+}
+
