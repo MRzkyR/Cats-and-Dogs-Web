@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css" />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+      <title>Meow and Woof</title>
+   </head>
+   <body>
+      <header>
+         <nav>
+            <h5 class="logo">Meow&Woof</h5>
+
+            <ul id="navbar">
+               <li><a href="index.html">Home</a></li>
+               <li><a href="breed.html" class="active">Breed</a></li>
+               <li><a href="contact.html">Contact</a></li>
+               <i class="fa-solid fa-xmark fa-lg"></i>
+            </ul>
+
+            <div id="mobile-nav">
+               <i id="bar" class="fa-solid fa-bars fa-lg"></i>
+            </div>
+         </nav>
+
+         <div id="breed-hero">
+            <h1>#FindBreed</h1>
+            <p>
+               Cats and dogs are of different breeds. Find according to the
+               animal you want to find.
+            </p>
+         </div>
+      </header>
+
+      <section id="search" class="section">
+         <div id="search-container">
+            <div class="radio-group">
+               <input type="radio" id="cats" name="pet" value="cats" />
+               <label for="cats" class="cats-label shadow-input"
+                  ><h6>Cats</h6></label
+               >
+
+               <input type="radio" id="all" name="pet" value="all" checked />
+               <label for="all" class="all-label shadow-input"
+                  ><h6>All</h6></label
+               >
+
+               <input type="radio" id="dogs" name="pet" value="dogs" />
+               <label for="dogs" class="dogs-label shadow-input"
+                  ><h6>Dogs</h6></label
+               >
+            </div>
+
+            <div class="text-input">
+               <input
+                  type="text"
+                  id="input-keyword"
+                  class="shadow-input"
+                  placeholder="Search breed"
+               />
+               <button id="search-button">
+                  <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+               </button>
+            </div>
+         </div>
+
+         <div id="pet-cards">
+            
+         </div>
+      </section>
+
+      <footer>
+         <div class="content">
+            <h5 class="logo">Meow&Woof</h5>
+            <p>
+               Meow&Woof is a website that provides a little information about
+               cats and dogs of various types of breeds. Here you can also find
+               interesting facts about them.
+            </p>
+            <div class="media">
+               <i class="fa-brands fa-instagram fa-xl"></i>
+               <i class="fa-brands fa-github fa-xl"></i>
+               <i class="fa-brands fa-linkedin fa-xl"></i>
+            </div>
+         </div>
+         <div class="copyright">
+            <p>
+               &copy; <span id="currentYear"></span> Your Company Name. All
+               rights reserved.
+            </p>
+            <ul>
+               <li><a href="" class="active">Home</a></li>
+               <li><a href="">Breed</a></li>
+               <li><a href="">Contact</a></li>
+            </ul>
+         </div>
+      </footer>
+
+      <script src="script.js"></script>
+   </body>
+</html>
