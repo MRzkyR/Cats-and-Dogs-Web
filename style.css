@@ -464,8 +464,7 @@ footer .copyright li a:hover {
 
 #search-container input[type="text"]:focus {
    outline: none;
- }
- 
+}
 
 #search-container button {
    width: 45px;
@@ -498,17 +497,122 @@ footer .copyright li a:hover {
    margin-bottom: 25px;
 }
 
+.pet-card:hover {
+   box-shadow: 0 5px 10px rgba(255, 0, 0, 0.5);
+   
+}
+
 .pet-card img {
    width: 250px;
    height: 200px;
    border-radius: 30px 30px 0 0;
 }
 
-.pet-card h3{
+.pet-card h3 {
    text-align: center;
    font-size: 1.3rem;
    padding: 15px;
    line-height: 30px;
+}
+
+/* Detail Card Section */
+
+.modal-overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, 0.5);
+   display: none;
+   z-index: 9999;
+   transition: 0.5s;
+}
+
+.card-detail {
+   background-color: #fff;
+   width: 90%;
+   margin: 50px auto;
+   padding: 20px 25px 30px;
+   border-radius: 5px;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card-detail button {
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   margin-bottom: 15px;
+}
+
+.close-button:hover i {
+   color: #ec840e;
+}
+
+.card-detail button i {
+   font-size: 2rem;
+   transition: color 0.3s;
+}
+
+.card-detail .container {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   gap: 50px;
+}
+
+.card-detail .container .identify {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.card-detail .container #image-detail {
+   height: 300px;
+   width: 300px;
+   border-radius: 15px;
+   overflow: hidden;
+   margin-bottom: 20px;
+}
+
+.card-detail .container img {
+   height: 300px;
+}
+
+.card-detail .container .details {
+   width: 600px;
+}
+
+.card-detail .container table {
+   width: 100%;
+   border-collapse: collapse;
+}
+
+.card-detail .container table td {
+   padding: 8px;
+}
+
+.card-detail .container table tr:hover {
+   background-color: #f5f5f5;
+}
+
+.card-detail .container table tr:hover td {
+   color: #333;
+}
+
+.card-detail .container .values {
+   display: inline-flex;
+   align-items: center;
+   gap: 5px;
+}
+
+.card-detail .container .values i {
+   color: #ec840e;
+}
+
+.card-detail .container table tr td:nth-child(2) {
+   text-align: right;
 }
 
 /* MEDIA QUERY */
