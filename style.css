@@ -495,11 +495,12 @@ footer .copyright li a:hover {
    border-radius: 30px;
    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
    margin-bottom: 25px;
+   transition: transform 0.3s ease;
 }
 
 .pet-card:hover {
-   box-shadow: 0 5px 10px rgba(255, 0, 0, 0.5);
-   
+   box-shadow: 0 5px 20px rgba(0, 0, 10, 0.1);
+   transform: scale(1.05) translateY(-15px)
 }
 
 .pet-card img {
@@ -525,6 +526,8 @@ footer .copyright li a:hover {
    bottom: 0;
    background-color: rgba(0, 0, 0, 0.5);
    display: none;
+   justify-content: center;
+   align-items: center;
    z-index: 9999;
    transition: 0.5s;
 }
@@ -532,8 +535,8 @@ footer .copyright li a:hover {
 #card-container {
    background-color: #fff;
    width: 90%;
-   margin: 50px auto;
-   padding: 20px 25px 30px;
+   height: 85%;
+   padding: 20px 25px 35px;
    border-radius: 5px;
    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
@@ -559,6 +562,7 @@ footer .copyright li a:hover {
    justify-content: space-around;
    align-items: center;
    gap: 50px;
+   height: 90%;
 }
 
 #card-container #card-detail .identify {
@@ -569,6 +573,8 @@ footer .copyright li a:hover {
 }
 
 #card-container #card-detail #image-detail {
+   display: flex;
+   justify-content: center;
    height: 300px;
    width: 300px;
    border-radius: 15px;
@@ -581,12 +587,36 @@ footer .copyright li a:hover {
 }
 
 #card-container #card-detail .details {
+   padding-right: 20px;
+   max-height: 100%;
+   overflow-y: auto;
    width: 600px;
 }
 
 #card-container #card-detail table {
    width: 100%;
+   max-height: 100%;
    border-collapse: collapse;
+}
+
+#card-container #card-detail table::-webkit-scrollbar {
+   width: 10px;
+}
+
+#card-container #card-detail table::-webkit-scrollbar {
+   width: 6px;
+   height: 6px;
+}
+#card-container #card-detail table::-webkit-scrollbar-track {
+   border-radius: 10px;
+   background: rgba(0, 0, 0, 0.1);
+}
+#card-container #card-detail table::-webkit-scrollbar-thumb {
+   border-radius: 10px;
+   background: rgba(0, 0, 0, 0.2);
+}
+#card-container #card-detail table::-webkit-scrollbar-thumb:hover {
+   background: rgba(0, 0, 0, 0.4);
 }
 
 #card-container #card-detail table td {
