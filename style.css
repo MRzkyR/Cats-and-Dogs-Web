@@ -64,6 +64,7 @@ p {
    flex-direction: row;
    justify-content: space-around;
    flex-wrap: wrap;
+   gap: 25px;
 }
 
 .logo {
@@ -188,20 +189,21 @@ nav li a.active::after {
 /* FEATURED SECTION START */
 
 #featured .feature-card {
-   padding: 25px;
+   padding: 50px 25px;
    width: 300px;
    height: 415px;
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   justify-content: flex-start;
    align-items: center;
+   gap: 25px;
    border-radius: 20px;
    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
    background-color: #fff;
 }
 
 #featured .feature-card img {
-   width: 90%;
+   height: 25%;
    margin-bottom: 20px;
 }
 
@@ -213,11 +215,13 @@ nav li a.active::after {
 
 #articles {
    margin: 50px 0 25px 0;
+   display: flex;
+   flex-direction: column;
 }
 
 #articles .article {
    width: 100%;
-   height: 380px;
+   /* height: 380px; */
    background-size: cover;
    background-position: center;
    background-color: #233747;
@@ -225,6 +229,7 @@ nav li a.active::after {
 
 #articles #cat {
    background-image: url("Images/cat.jpg");
+   /* height: fit-content; */
 }
 
 #articles #dog {
@@ -244,10 +249,11 @@ nav li a.active::after {
 #articles .article-content p {
    margin-top: 15px;
    font-size: 1em;
-   line-height: 40px;
+   line-height: 35px;
 }
 
 #articles .article-content h5 {
+   margin-top: 35px;
    color: rgb(205, 205, 205);
 }
 
@@ -266,7 +272,7 @@ nav li a.active::after {
 #reviews .review-card {
    display: flex;
    flex-direction: column;
-   justify-content: space-between;
+   justify-content: space-between;s
    width: 300px;
    height: 300px;
    padding: 30px;
@@ -504,8 +510,9 @@ footer .copyright li a:hover {
 
 .pet-card:hover {
    /* box-shadow: 0 5px 20px rgba(0, 0, 10, 0.1); */
-   box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 50px -20px, rgba(0, 0, 0, 0.25) 0px 30px 60px -30px;
-   transform: scale(1.05) translateY(-15px)
+   box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 50px -20px,
+      rgba(0, 0, 0, 0.25) 0px 30px 60px -30px;
+   transform: scale(1.05) translateY(-15px);
 }
 
 .pet-card img {
@@ -674,14 +681,14 @@ footer .copyright li a:hover {
 #form-details form input[type="text"],
 #form-details form input[type="email"],
 #form-details form textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #515151;
-  border-radius: 5px;
+   width: 100%;
+   padding: 8px;
+   border: 1px solid #515151;
+   border-radius: 5px;
 }
 
 #form-details form button {
-   padding: 10px 20px;  
+   padding: 10px 20px;
    background-color: rgb(59, 143, 59);
    color: #fff;
    border: none;
@@ -692,6 +699,10 @@ footer .copyright li a:hover {
 /* MEDIA QUERY */
 
 @media (max-width: 768px) {
+   body {
+      font-size: 14px;
+   }
+
    #navbar {
       display: flex;
       flex-direction: column;
@@ -731,4 +742,39 @@ footer .copyright li a:hover {
       left: 30px;
       font-size: 1.4rem;
    }
+
+   #hero img {
+      width: 70%;
+      position: absolute;
+      bottom: 0;
+      right: -50px;
+   }
+
+   #featured .feature-card {
+      width: 100%;
+      height: 150px;
+      padding: 25px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+   }
+
+   #featured .feature-card img {
+      height: 70%;
+      margin-bottom: 20px;
+  }
+
+  #articles .article {
+   /* width: 100%;
+   height: 300px;
+   background-size: cover;
+   background-position: center;
+   background-color: #233747; */
+}
+
+  #articles .article-content {
+   width: 65%;
+   padding: 25px;
+}
 }
