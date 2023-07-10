@@ -11,43 +11,70 @@
       <title>Meow and Woof</title>
    </head>
    <body>
-      <nav>
-         <h5 class="logo">Meow&Woof</h5>
-         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="breed.html">Breed</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-         </ul>
-      </nav>
-      <h1>breed</h1>
+      <header>
+         <nav>
+            <h5 class="logo">Meow&Woof</h5>
+
+            <ul id="navbar">
+               <li><a href="index.html">Home</a></li>
+               <li><a href="breed.html">Breed</a></li>
+               <li><a href="contact.html" class="active">Contact</a></li>
+               <i id="close" class="fa-solid fa-xmark fa-lg"></i>
+            </ul>
+
+            <div id="mobile-nav">
+               <i id="bar" class="fa-solid fa-bars fa-lg"></i>
+            </div>
+         </nav>
+
+         <div id="breed-hero">
+            <h1>#FindBreed</h1>
+            <p>
+               Cats and dogs are of different breeds. Find according to the
+               animal you want to find.
+            </p>
+         </div>
+      </header>
+
+      <section id="form-details" class="section">
+         <h3>Contact Me</h3>
+         <form id="contact-form" action="">
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+            <input type="email" id="email" name="email" placeholder="E-mail" required />
+            <input type="text" id="subject" name="subject" placeholder="Subject" required />
+            <textarea id="message" name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            
+            <button type="submit">Submit</button>
+         </form>
+      </section>
 
       <footer>
-        <div class="content">
-           <h5 class="logo">Meow&Woof</h5>
-           <p>
-              Meow&Woof is a website that provides a little information about
-              cats and dogs of various types of breeds. Here you can also find
-              interesting facts about them.
-           </p>
-           <div class="media">
-              <i class="fa-brands fa-instagram fa-xl"></i>
-              <i class="fa-brands fa-github fa-xl"></i>
-              <i class="fa-brands fa-linkedin fa-xl"></i>
-           </div>
-        </div>
-        <div class="copyright">
-           <p>
-              &copy; <span id="currentYear"></span> Your Company Name. All
-              rights reserved.
-           </p>
-           <ul>
-              <li><a href="" class="active">Home</a></li>
-              <li><a href="">Breed</a></li>
-              <li><a href="">Contact</a></li>
-           </ul>
-        </div>
-     </footer>
-     
+         <div class="content">
+            <h5 class="logo">Meow&Woof</h5>
+            <p>
+               Meow&Woof is a website that provides a little information about
+               cats and dogs of various types of breeds. Here you can also find
+               interesting facts about them.
+            </p>
+            <div class="media">
+               <i class="fa-brands fa-instagram fa-xl"></i>
+               <i class="fa-brands fa-github fa-xl"></i>
+               <i class="fa-brands fa-linkedin fa-xl"></i>
+            </div>
+         </div>
+         <div class="copyright">
+            <p>
+               &copy; <span id="currentYear"></span> Your Company Name. All
+               rights reserved.
+            </p>
+            <ul>
+               <li><a href="" class="active">Home</a></li>
+               <li><a href="">Breed</a></li>
+               <li><a href="">Contact</a></li>
+            </ul>
+         </div>
+      </footer>
+
       <script src="script.js"></script>
    </body>
 </html>

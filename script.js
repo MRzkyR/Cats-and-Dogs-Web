@@ -1,98 +1,72 @@
 /* Responsive Navbar  */
 
 const bar = document.getElementById("bar");
+const close = document.getElementById("close");
 const nav = document.getElementById("navbar");
 
-if (bar) {
-   bar.addEventListener("click", () => {
-      nav.classList.add("active");
+bar?.addEventListener("click", toggleNav);
+close?.addEventListener("click", toggleNav);
+
+function toggleNav() {
+  nav.classList.toggle("active");
+}
+
+
+/* Stars Review */
+
+const reviewCards = document.querySelectorAll(".review-card");
+
+if (reviewCards) {
+   reviewCards.forEach((card) => {
+      const stars = card.querySelectorAll(".stars i");
+      let isClicked = false;
+
+      stars.forEach((star, index) => {
+         star.addEventListener("mouseenter", () => {
+            if (!isClicked) {
+               fillStars(stars, index);
+            }
+         });
+
+         star.addEventListener("mouseleave", () => {
+            if (!isClicked) {
+               resetStars(stars);
+            }
+         });
+
+         star.addEventListener("click", () => {
+            isClicked = true;
+            selectStars(stars, index);
+         });
+      });
    });
+
+   function fillStars(stars, index) {
+      for (let i = 0; i <= index; i++) {
+         stars[i].classList.replace("fa-regular", "fa-solid");
+      }
+   }
+
+   function resetStars(stars) {
+      stars.forEach((star) => {
+         star.classList.replace("fa-solid", "fa-regular");
+      });
+   }
+
+   function selectStars(stars, index) {
+      for (let i = 0; i < stars.length; i++) {
+         if (i <= index) {
+            stars[i].classList.replace("fa-regular", "fa-solid");
+         } else {
+            stars[i].classList.replace("fa-solid", "fa-regular");
+         }
+      }
+   }
 }
 
-/* API */
 
-// Event listener for search button
-// searchButton.addEventListener("click", function () {
-//    console.log("start");
-//    const keyword = inputKeyword.value.trim();
-//    inputKeyword.value = "";
+/* Search Breeds */
 
-//    if (catsRadio.checked) {
-//       fetchAndRenderData("cats", keyword);
-//    } else if (dogsRadio.checked) {
-//       fetchAndRenderData("dogs", keyword);
-//    } else {
-//       Promise.all([fetchData("cats", keyword), fetchData("dogs", keyword)])
-//          .then(([catsData, dogsData]) => {
-//             const pets = [...catsData, ...dogsData];
-//             renderCards(pets);
-//          })
-//          .catch((error) => {
-//             console.error("Error fetching data:", error);
-//          });
-//    }
-//    console.log("end");
-// });
-
-// // Fetch data from API
-// function fetchData(type, keyword) {
-//    const url = `https://api.api-ninjas.com/v1/${type}?name=${encodeURIComponent(
-//       keyword
-//    )}`;
-//    const headers = {
-//       "X-Api-Key": "NQixyJ5MEN4D4GQu/hPqgg==xvYvSjbn3dVSdPm6",
-//    };
-
-//    return fetch(url, { headers }).then((response) => {
-//       if (!response.ok) {
-//          throw new Error(response.statusText);
-//       }
-//       return response.json();
-//    });
-// }
-
-// // Fetch and render data for a specific type (cats or dogs)
-// function fetchAndRenderData(type, keyword) {
-//    fetchData(type, keyword)
-//       .then((data) => {
-//          renderCards(data);
-//       })
-//       .catch((error) => {
-//          console.error(`Error fetching ${type} data:`, error);
-//       });
-// }
-
-// Render pet cards
-
-/* CARD DETAIL */
-
-// const modalOverlay = document.querySelector(".modal-overlay");
-
-// document.addEventListener("click", function (e) {
-//    if (e.target.closest(".pet-card")) {
-//       const name = e.target.dataset.name;
-//       modalOverlay.style.display = "block";
-//       // const
-//    }
-// });
-
-// Open the modal
-function openModal() {
-   modalOverlay.style.display = "block";
-}
-
-// Add event listener to open the modal
-// const petCard = document.querySelector(".pet-card");
-// petCard.addEventListener("click", () => (modalOverlay.style.display = "block"));
-
-// Add event listener to close the modal
-const closeButton = document.querySelector(".close-button");
-closeButton.addEventListener(
-   "click",
-   () => (modalOverlay.style.display = "none")
-);
-
-// Event listener for search button
 const searchButton = document.getElementById("search-button");
 const inputKeyword = document.getElementById("input-keyword");
 const catsRadio = document.getElementById("cats");
@@ -102,27 +76,25 @@ const petCards = document.getElementById("pet-cards");
 const cardDetail = document.getElementById("card-detail");
 const modalOverlay = document.querySelector(".modal-overlay");
 
-catsRadio.addEventListener(
-   "click",
-   () => (inputKeyword.placeholder = "Search cat breeds...")
-);
-dogsRadio.addEventListener(
-   "click",
-   () => (inputKeyword.placeholder = "Search dog breeds...")
-);
-allRadio.addEventListener(
-   "click",
-   () => (inputKeyword.placeholder = "Search all breeds...")
-);
+catsRadio?.addEventListener("click", () => {
+   inputKeyword.placeholder = "Search cat breeds...";
+});
 
+dogsRadio?.addEventListener("click", () => {
+   inputKeyword.placeholder = "Search dog breeds...";
+});
 
-inputKeyword.addEventListener("keydown", function (event) {
+allRadio?.addEventListener("click", () => {
+   inputKeyword.placeholder = "Search all breeds...";
+});
+
+inputKeyword?.addEventListener("keydown", function (event) {
    if (event.keyCode === 13) {
       searchButtonFunction();
    }
 });
 
-searchButton.addEventListener("click", searchButtonFunction);
+searchButton?.addEventListener("click", searchButtonFunction);
 
 async function searchButtonFunction() {
    const keyword = inputKeyword.value;
@@ -186,6 +158,8 @@ function showCard(data) {
     </div>`;
 }
 
+/* Detail breeds */
+
 document.addEventListener("click", async function (e) {
    const petCard = e.target.closest(".pet-card");
 
@@ -206,6 +180,7 @@ document.addEventListener("click", async function (e) {
       modalOverlay.style.display = "flex";
    }
 });
+
 
 function getCatDetail(name) {
    return fetchData(`cats?name=${name}`);
@@ -396,6 +371,12 @@ function generateStarRating(number) {
    }
    return '<div class="values">' + stars + "</div>";
 }
+
+const closeButton = document.querySelector(".close-button");
+
+closeButton?.addEventListener("click", () => {
+   modalOverlay.style.display = "none";
+});
 
 /* Footer */
 
