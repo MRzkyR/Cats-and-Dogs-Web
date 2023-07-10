@@ -12,6 +12,13 @@ function toggleNav() {
 }
 
 
+const searchNow = document.getElementById("search-now");
+searchNow?.addEventListener("click", () => {
+   console.log("su");
+   window.location.href = "breed.html";
+});
+
+
 /* Stars Review */
 
 const reviewCards = document.querySelectorAll(".review-card");
