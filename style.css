@@ -22,6 +22,8 @@ h1 {
 h2 {
    font-size: 2.2em;
    font-weight: bold;
+   text-align: center;
+   line-height: 40px;
 }
 
 h3 {
@@ -133,6 +135,7 @@ nav li a.active::after {
    height: 100vh;
    position: relative;
    overflow: hidden;
+   padding-top: 30px;
 }
 
 #hero .hero-text {
@@ -141,7 +144,7 @@ nav li a.active::after {
    flex-direction: column;
    align-items: flex-start;
    justify-content: center;
-   padding: 50px;
+   padding: 40px;
 }
 
 #hero .hero-text h1 {
@@ -166,6 +169,11 @@ nav li a.active::after {
    border: none;
    box-shadow: 3px 0 4px rgba(32, 190, 108, 0.08);
    margin-top: 25px;
+   cursor: pointer;
+}
+
+#hero .hero-text button:hover {
+   background-color: #bd6500;
 }
 
 #hero img {
@@ -175,7 +183,7 @@ nav li a.active::after {
    right: -50px;
 }
 
-/* ABOUT SECTION START */
+/* About Section Start */
 
 #about p {
    text-align: center;
@@ -195,11 +203,11 @@ nav li a.active::after {
    color: #d47100;
 }
 
-/* FEATURED SECTION START */
+/* Featured Section Start */
 
 #featured .feature-card {
    padding: 50px 25px;
-   width: 300px;
+   width: min(30%, 300px);
    height: 415px;
    display: flex;
    flex-direction: column;
@@ -212,7 +220,7 @@ nav li a.active::after {
 }
 
 #featured .feature-card img {
-   height: 25%;
+   width: 70%;
    margin-bottom: 25px;
 }
 
@@ -225,7 +233,7 @@ nav li a.active::after {
    text-align: justify;
 }
 
-/* ARTICLES SECTION START */
+/* Articles Section Start */
 
 #articles {
    margin: 50px 0 25px 0;
@@ -244,8 +252,12 @@ nav li a.active::after {
    background-image: url("Images/cat.jpg");
 }
 
+#articles #cat .article-content h2 {
+   text-align: left;
+}
+
 #articles #dog {
-   background-image: url("Images/dog-cp.jpg");
+   background-image: url("Images/dog.jpg");
 }
 
 #articles .article-content {
@@ -264,9 +276,16 @@ nav li a.active::after {
    line-height: 35px;
 }
 
-#articles .article-content h5 {
+#articles .article-content a {
+   text-decoration: none;
+   font-size: 1em;
+   font-weight: bold;
    margin-top: 35px;
    color: rgb(205, 205, 205);
+}
+
+#articles .article-content a:hover {
+   color: rgb(255, 255, 255);
 }
 
 #articles #dog .article-content {
@@ -275,7 +294,7 @@ nav li a.active::after {
 
 #articles #dog .article-content h2,
 #articles #dog .article-content p,
-#articles #dog .article-content h5 {
+#articles #dog .article-content a {
    text-align: right;
 }
 
@@ -327,77 +346,20 @@ nav li a.active::after {
    color: #ec840e;
 }
 
-footer .content {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-evenly;
-   align-items: center;
-   padding: 25px;
-   height: 250px;
-   width: 100%;
-   background-color: #2b2e33;
-   color: #f5f5f5;
-   margin-top: 50px;
-}
-
-footer .content .logo {
-   font-size: 1.6em;
-}
-
-footer .content p {
-   font-size: 0.9em;
-   width: 45%;
-   text-align: center;
-}
-
-footer .content .media {
-   display: flex;
-   gap: 15px;
-}
-
-footer .copyright {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   width: 100%;
-   height: 50px;
-   padding: 10px 50px;
-   background-color: #1e2023;
-   color: #f5f5f5;
-}
-
-footer .copyright p {
-   font-size: 0.85em;
-}
-
-footer .copyright li {
-   list-style: none;
-   display: inline-block;
-}
-
-footer .copyright li a {
-   color: #f5f5f5;
-   text-decoration: none;
-   font-size: 0.9em;
-   font-weight: 500;
-   margin-left: 40px;
-   transition: 0.3s ease;
-}
-
-footer .copyright li a:hover {
-   color: #979797;
+#reviews .stars i {
+   cursor: pointer;
 }
 
 /* BREED PAGE */
 
-/* HEADER START */
+/* Header Start */
 
 #breed-hero {
    height: 350px;
    background-image: url("Images/breed-hero.jpg");
    background-size: cover;
    background-position: top;
-   padding-top: 50px;
+   padding: 50px 30px 10px;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -406,6 +368,10 @@ footer .copyright li a:hover {
    color: #f5f5f5;
    position: relative;
    z-index: -1;
+}
+
+#breed-hero p {
+   text-align: center;
 }
 
 #breed-hero::after {
@@ -419,10 +385,10 @@ footer .copyright li a:hover {
    z-index: inherit;
 }
 
-/* SEARCH SECTION START */
+/* Search Section Start */
 
 #search {
-   min-height: 250px;
+   min-height: 50vh;
    justify-content: flex-start;
 }
 
@@ -521,7 +487,6 @@ footer .copyright li a:hover {
 }
 
 .pet-card:hover {
-   /* box-shadow: 0 5px 20px rgba(0, 0, 10, 0.1); */
    box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 50px -20px,
       rgba(0, 0, 0, 0.25) 0px 30px 60px -30px;
    transform: scale(1.05) translateY(-15px);
@@ -594,13 +559,19 @@ footer .copyright li a:hover {
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   padding-left: 15px;
+   width: min(35%, 300px);
+}
+
+#card-container #card-detail .identify h3 {
+   text-align: center;
 }
 
 #card-container #card-detail #image-detail {
    display: flex;
    justify-content: center;
    height: 300px;
-   width: 300px;
+   width: 100%;
    border-radius: 15px;
    overflow: hidden;
    margin-bottom: 20px;
@@ -708,6 +679,78 @@ footer .copyright li a:hover {
    cursor: pointer;
 }
 
+/* FOOTER */
+
+footer .content {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   padding: 25px;
+   height: 250px;
+   width: 100%;
+   background-color: #2b2e33;
+   color: #f5f5f5;
+   margin-top: 50px;
+}
+
+footer .content .logo {
+   font-size: 1.6em;
+}
+
+footer .content p {
+   font-size: 0.9em;
+   width: max(50%, 300px);
+   text-align: center;
+}
+
+footer .content .media {
+   display: flex;
+   gap: 15px;
+}
+
+footer .content .media a {
+   text-decoration: none;
+   color: #f5f5f5;
+}
+
+footer .content .media a:hover {
+   color: #979797;
+}
+
+footer .copyright {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   height: 50px;
+   padding: 10px 50px;
+   background-color: #1e2023;
+   color: #f5f5f5;
+}
+
+footer .copyright p {
+   font-size: 0.85em;
+}
+
+footer .copyright li {
+   list-style: none;
+   display: inline-block;
+}
+
+footer .copyright li a {
+   color: #f5f5f5;
+   text-decoration: none;
+   font-size: 0.8rem;
+   font-weight: 500;
+   margin-left: 40px;
+   transition: 0.3s ease;
+}
+
+footer .copyright li a:hover {
+   color: #979797;
+}
+
 /* MEDIA QUERY */
 
 @media (max-width: 768px) {
@@ -719,7 +762,6 @@ footer .copyright li a:hover {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
       position: fixed;
       top: 0;
       right: -300px;
@@ -727,7 +769,7 @@ footer .copyright li a:hover {
       width: 300px;
       background-color: aliceblue;
       box-shadow: 0 40px 60px rgba(0, 0, 0, 0.25);
-      padding: 80px 0 0 25px;
+      padding: 60px 0 25px;
       transition: 0.3s ease-out;
    }
 
@@ -736,11 +778,12 @@ footer .copyright li a:hover {
    }
 
    nav li {
-      margin-bottom: 30px;
+      padding: 15px 0px;
    }
 
    nav li a {
       margin-left: 0;
+      font-size: 0.9rem;
    }
 
    #mobile-nav {
@@ -755,6 +798,10 @@ footer .copyright li a:hover {
       font-size: 1.4rem;
    }
 
+   #hero {
+      height: 95vh;
+   }
+
    #hero img {
       width: 70%;
       position: absolute;
@@ -762,19 +809,36 @@ footer .copyright li a:hover {
       right: -50px;
    }
 
+   #hero .hero-text {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 20px;
+   }
+
+   #hero .hero-text h1 {
+      width: 80%;
+      margin-bottom: 15px;
+      font-size: 2.7rem;
+      line-height: normal;
+   }
+
    #featured .feature-card {
       width: 100%;
-      height: 150px;
+      height: 170px;
       padding: 25px;
-      display: flex;
       flex-direction: row;
-      justify-content: center;
-      align-items: center;
    }
 
    #featured .feature-card img {
-      height: 70%;
+      width: 25%;
       margin-bottom: 20px;
+   }
+
+   #featured .feature-card h4 {
+      text-align: left;
    }
 
    #articles .article-content {
@@ -782,33 +846,185 @@ footer .copyright li a:hover {
       padding: 25px;
    }
 
+   #reviews .review-card {
+      width: 100%;
+      height: 230px;
+      padding: 30px;
+   }
+
+   #reviews .profile {
+      margin-bottom: 20px;
+   }
 
    #search-container {
       flex-direction: column;
       gap: 30px;
    }
 
+   #search {
+      padding: 50px 25px;
+   }
+
    .pet-card {
-      width: 150px;
-      height: 200px;
+      width: 200px;
+      height: 240px;
       margin-bottom: 25px;
-  }
+   }
 
-  .pet-card img {
-    width: 150px;
-    height: 120px;
-    border-radius: 30px 30px 0 0;
-}
+   .pet-card img {
+      width: 200px;
+      height: 160px;
+   }
 
-.pet-card h3 {
-   text-align: center;
-   font-size: 1rem;
-   padding: 15px;
-   line-height: 20px;
-}
+   .pet-card h3 {
+      text-align: center;
+      font-size: 1rem;
+      padding: 15px;
+      line-height: 20px;
+   }
 
+   #card-container {
+      height: 90%;
+   }
+
+   #card-container #card-detail {
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 25px;
+   }
+
+   #card-container #card-detail .identify {
+      padding-left: 0px;
+      width: 100%;
+   }
+
+   #card-container #card-detail #image-detail {
+      height: 150px;
+      width: min(225px, 100%);
+   }
+
+   #card-container #card-detail img {
+      height: 150px;
+   }
+
+   #card-container #card-detail .details {
+      width: 100%;
+   }
 
    #form-details form {
       width: 70%;
-  }
+   }
+
+   /* FOOTER */
+
+   footer .copyright {
+      padding: 10px 30px;
+   }
+
+   footer .copyright li a {
+      font-weight: 400;
+      margin-left: 20px;
+      font-size: 0.7rem;
+   }
+}
+
+@media (max-width: 500px) {
+   body {
+      font-size: 12px;
+   }
+
+   #hero {
+      height: 80vh;
+   }
+
+   #hero .hero-text h1 {
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 2.4rem;
+      z-index: 99;
+   }
+
+   #hero .hero-text p {
+      font-weight: 500;
+      width: 70%;
+      margin-bottom: 10px;
+      z-index: 99;
+   }
+
+   #hero img {
+      width: 150%;
+      position: absolute;
+      bottom: 0;
+      right: -300px;
+      opacity: 0.9;
+   }
+
+   #hero .hero-text button {
+      padding: 10px 20px;
+   }
+
+   #about p {
+      line-height: 25px;
+   }
+
+   .cards {
+      flex-direction: column;
+      gap: 25px;
+   }
+
+   #featured .feature-card {
+      height: 280px;
+      flex-direction: column;
+   }
+
+   #featured .feature-card img {
+      width: 50%;
+      margin-bottom: 10px;
+   }
+
+   #featured .feature-card h4 {
+      text-align: center;
+   }
+
+   #reviews .review-card {
+      height: 250px;
+   }
+
+   #search-container {
+      width: 90%;
+   }
+
+   #search-container .text-input {
+      width: 100%;
+   }
+
+   #search-container input[type="text"] {
+      width: 100%;
+   }
+
+   .pet-card {
+      width: 300px;
+      height: 310px;
+      margin-bottom: 25px;
+   }
+
+   .pet-card img {
+      width: 100%;
+      height: 240px;
+   }
+
+   #form-details form {
+      width: 100%;
+   }
+
+   /* FOOTER */
+
+   footer .copyright {
+      padding: 10px 20px;
+   }
+
+   footer .copyright li a {
+      margin-left: 10px;
+      font-size: 0.6rem;
+   }
 }
