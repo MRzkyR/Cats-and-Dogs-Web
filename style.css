@@ -642,7 +642,7 @@ nav li a.active::after {
 
 /* CONTACT PAGE */
 
-#form-details {
+.form-details {
    width: 100%;
    display: flex;
    flex-direction: column;
@@ -650,27 +650,27 @@ nav li a.active::after {
    align-items: center;
 }
 
-#form-details h3 {
+.form-details h3 {
    margin-bottom: 15px;
 }
 
-#form-details form {
+.form-details form {
    width: 50%;
    display: flex;
    flex-direction: column;
    gap: 15px;
 }
 
-#form-details form input[type="text"],
-#form-details form input[type="email"],
-#form-details form textarea {
+.form-details form input[type="text"],
+.form-details form input[type="email"],
+.form-details form textarea {
    width: 100%;
    padding: 8px;
    border: 1px solid #515151;
    border-radius: 5px;
 }
 
-#form-details form button {
+.form-details form button {
    padding: 10px 20px;
    background-color: rgb(59, 143, 59);
    color: #fff;

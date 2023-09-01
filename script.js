@@ -8,9 +8,8 @@ bar?.addEventListener("click", toggleNav);
 close?.addEventListener("click", toggleNav);
 
 function toggleNav() {
-  nav.classList.toggle("active");
+   nav.classList.toggle("active");
 }
-
 
 const searchNow = document.getElementById("search-now");
 searchNow?.addEventListener("click", () => {
@@ -18,14 +17,16 @@ searchNow?.addEventListener("click", () => {
    window.location.href = "breed.html";
 });
 
-
 /* Stars Review */
 
-const reviewCards = document.querySelectorAll(".review-card");
+function setupRating() {
+   document.addEventListener("mouseover", (event) => {
+      const target = event.target;
+      const reviewCard = target.closest(".review-card");
 
-if (reviewCards) {
-   reviewCards.forEach((card) => {
-      const stars = card.querySelectorAll(".stars i");
+      if (!reviewCard) return; // Exit if the click is not inside a review card
+
+      const stars = reviewCard.querySelectorAll(".stars i");
       let isClicked = false;
 
       stars.forEach((star, index) => {
@@ -71,6 +72,58 @@ if (reviewCards) {
    }
 }
 
+// Call the setupRating function when the page loads
+setupRating();
+
+const commentForm = document.getElementById("comment-form");
+const review = document.getElementById("review-cards");
+
+commentForm.addEventListener("submit", (event) => {
+   event.preventDefault();
+
+   const name = sanitizeHTML(document.getElementById("name").value);
+   const job = sanitizeHTML(document.getElementById("job").value);
+   const subject = sanitizeHTML(document.getElementById("subject").value);
+   const message = sanitizeHTML(document.getElementById("message").value);
+
+   const newCard = createCard(name, job, subject, message);
+   review.prepend(newCard);
+
+   // Reset the form fields after submission
+   commentForm.reset();
+});
+
+function sanitizeHTML(html) {
+   return html.replace(/<[^>]*>?/gm, "");
+}
+
+function createCard(name, job, subject, message) {
+   const card = document.createElement("div");
+   card.classList.add("review-card");
+
+   card.innerHTML = `
+      <div class="content">
+         <div class="profile">
+            <img src="Images/no-profile.jpg" alt="" />
+            <div class="profile-data">
+               <h4>${name}</h4>
+               <p>${job}</p>
+            </div>
+         </div>
+         <h5>${subject}</h5>
+         <p>${message}</p>
+      </div>
+      <div class="stars">
+         <i class="fa-regular fa-star"></i>
+         <i class="fa-regular fa-star"></i>
+         <i class="fa-regular fa-star"></i>
+         <i class="fa-regular fa-star"></i>
+         <i class="fa-regular fa-star"></i>
+      </div>
+   `;
+
+   return card;
+}
 
 /* Search Breeds */
 
@@ -187,7 +240,6 @@ document.addEventListener("click", async function (e) {
       modalOverlay.style.display = "flex";
    }
 });
-
 
 function getCatDetail(name) {
    return fetchData(`cats?name=${name}`);
