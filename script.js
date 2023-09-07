@@ -160,6 +160,8 @@ async function searchButtonFunction() {
    const keyword = inputKeyword.value;
    inputKeyword.value = "";
 
+   showSkeletonLoading();
+
    let pets;
    if (catsRadio.checked) {
       pets = await getCats(keyword);
@@ -217,6 +219,23 @@ function showCard(data) {
       <h3>${data.name}</h3>
     </div>`;
 }
+
+function showSkeletonLoading() {
+   const numSkeletonCards = 9;
+   let skeletonHTML = '';
+
+   for (let i = 0; i < numSkeletonCards; i++) {
+      skeletonHTML += `
+         <div class="skeleton-card">
+            <div class="image"></div>
+            <div class="text"></div>
+         </div>
+      `;
+   }
+
+   petCards.innerHTML = skeletonHTML;
+}
+
 
 /* Detail breeds */
 
