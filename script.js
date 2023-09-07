@@ -78,7 +78,7 @@ setupRating();
 const commentForm = document.getElementById("comment-form");
 const review = document.getElementById("review-cards");
 
-commentForm.addEventListener("submit", (event) => {
+commentForm?.addEventListener("submit", (event) => {
    event.preventDefault();
 
    const name = sanitizeHTML(document.getElementById("name").value);

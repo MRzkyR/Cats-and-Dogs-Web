@@ -12,20 +12,22 @@
    </head>
    <body>
       <header>
-         <nav>
-            <h5 class="logo">Meow&Woof</h5>
-
-            <ul id="navbar">
-               <li><a href="index.html">Home</a></li>
-               <li><a href="breed.html">Breed</a></li>
-               <li><a href="contact.html" class="active">Contact</a></li>
-               <i id="close" class="fa-solid fa-xmark fa-lg"></i>
-            </ul>
-
-            <div id="mobile-nav">
-               <i id="bar" class="fa-solid fa-bars fa-lg"></i>
-            </div>
-         </nav>
+         <div id="nav-bg">
+            <nav>
+               <h5 class="logo">Meow&Woof</h5>
+   
+               <ul id="navbar">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="breed.html">Breed</a></li>
+                  <li><a href="contact.html" class="active">Contact</a></li>
+                  <i id="close" class="fa-solid fa-xmark fa-lg"></i>
+               </ul>
+   
+               <div id="mobile-nav">
+                  <i id="bar" class="fa-solid fa-bars fa-lg"></i>
+               </div>
+            </nav>
+         </div>
 
          <div id="breed-hero">
             <h1>#Let'sTalk</h1>
@@ -33,41 +35,43 @@
          </div>
       </header>
 
-      <section class="form-details section">
-         <h3>Contact Me</h3>
-         <form id="contact-form" action="">
-            <input
-               type="text"
-               id="name"
-               name="name"
-               placeholder="Your Name"
-               required
-            />
-            <input
-               type="email"
-               id="email"
-               name="email"
-               placeholder="E-mail"
-               required
-            />
-            <input
-               type="text"
-               id="subject"
-               name="subject"
-               placeholder="Subject"
-               required
-            />
-            <textarea
-               id="message"
-               name="message"
-               cols="30"
-               rows="10"
-               placeholder="Your Message"
-               required
-            ></textarea>
-
-            <button type="submit">Submit</button>
-         </form>
+      <section class="section">
+         <div class="form-details">
+            <h3>Contact Me</h3>
+            <form id="contact-form" action="">
+               <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+               />
+               <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="E-mail"
+                  required
+               />
+               <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Subject"
+                  required
+               />
+               <textarea
+                  id="message"
+                  name="message"
+                  cols="30"
+                  rows="10"
+                  placeholder="Your Message"
+                  required
+               ></textarea>
+   
+               <button type="submit">Submit</button>
+            </form>
+         </div>
       </section>
 
       <footer>
@@ -92,16 +96,18 @@
                ></a>
             </div>
          </div>
-         <div class="copyright">
-            <p>
-               &copy; <span id="currentYear"></span> Mrzkyr. All rights
-               reserved.
-            </p>
-            <ul>
-               <li><a href="./index.html">Home</a></li>
-               <li><a href="./breed.html">Breed</a></li>
-               <li><a href="./contact.html">Contact</a></li>
-            </ul>
+         <div id="copyright-bg">
+            <div class="copyright">
+               <p>
+                  &copy; <span id="currentYear"></span> Mrzkyr. All rights
+                  reserved.
+               </p>
+               <ul>
+                  <li><a href="./index.html">Home</a></li>
+                  <li><a href="./breed.html">Breed</a></li>
+                  <li><a href="./contact.html">Contact</a></li>
+               </ul>
+            </div>
          </div>
       </footer>
 
